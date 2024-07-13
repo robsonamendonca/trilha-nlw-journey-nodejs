@@ -1,0 +1,68 @@
+###--------- Activities
+### Create activity - 3298a9fb-1e62-4be6-a514-1ee63a0ae692
+POST http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/activities
+Content-Type: application/json
+
+{
+    "title": "Atividade do dia 18",
+    "occurs_at": "2024-07-18 20:31:00"
+}
+### List activities - 3298a9fb-1e62-4be6-a514-1ee63a0ae692
+GET http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/activities
+
+###--------- Links
+### Create link -81e88b10-b9de-43f7-afd7-2f333978aea7
+POST http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/links
+Content-Type: application/json
+
+{
+    "title": "Ferias na festas",
+    "url": "https://google.com"
+}
+### List links
+GET http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/links
+
+
+### --------- Participants
+### select participant
+GET http://localhost:3333/participants/7e5b7a5c-9648-42cc-a10e-9bb3099ac6bb 
+### List participants
+GET http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/participants
+### Create invite -7db2485-8489-46f4-9be4-52007b5c3f5c
+POST http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/invites
+Content-Type: application/json
+
+{
+    "email": "convidado@gmail.com"
+}
+
+### --------- Trips
+### Create trip
+POST  http://localhost:3333/trips
+Content-Type: application/json
+
+{
+    "destination": "Sao Paulo2",
+    "starts_at": "2024-07-13 22:31:00",
+    "ends_at": "2024-07-28 09:31:00",
+    "owner_name": "Robson",
+    "owner_email":"robson@robson.com",
+    "emails_to_invite": [
+        "email1@mail.com"
+    ]
+}
+### select trip
+GET http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef 
+### Update trip
+PUT http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef
+Content-Type: application/json
+
+{
+    "destination": "Sao Paulo, SP",
+    "starts_at": "2024-07-13 22:31:00",
+    "ends_at": "2024-07-28 09:31:00"
+}
+### Confirm trip
+GET http://localhost:3333/trips/c9df7ea7-5089-4249-a9b0-857ce2b96cef/confirm 
+### Confirm participant
+GET http://localhost:3333/participant/8f07ae23-120b-4ef8-9401-a3fcf0472e96/confirm
